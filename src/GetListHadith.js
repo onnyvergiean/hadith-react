@@ -23,8 +23,8 @@ class Hadith extends Component {
       );
     });
     return (
-      <div className="container">
-        <div className="row col-12 text-center justify-content-center col-12">
+      <div className="container mt-4">
+        <div className="row text-center justify-content-center">
           {listhadith}
         </div>
       </div>
