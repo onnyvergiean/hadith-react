@@ -1,0 +1,14 @@
+.card-hadith {
+  width: 100%;
+  min-height: 200px;
+  background-color: var(--card-color);
+  text-align: center;
+  border-radius: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.card-hadith span {
+  font-size: 40px;
+}
