@@ -9,7 +9,7 @@ class HadithList extends Component {
       <div className="col-12 col-md-3 my-2">
         <div className="card-hadith">
           <Link
-            to={`hadith/${this.props.id}/1`}
+            to={`/${this.props.id}`}
             style={{ color: "inherit", textDecoration: "inherit" }}
           >
             <AutoStoriesOutlinedIcon style={{ height: 50, width: 50 }} />

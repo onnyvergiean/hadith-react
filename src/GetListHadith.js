@@ -1,7 +1,7 @@
 import axios from "axios";
 import React, { Component } from "react";
 import HadithList from "./HadithList";
-
+import Heading from "./Heading";
 class Hadith extends Component {
   constructor(props) {
     super(props);
@@ -23,11 +23,14 @@ class Hadith extends Component {
       );
     });
     return (
-      <div className="container mt-4">
-        <div className="row text-center justify-content-center">
-          {listhadith}
+      <>
+        <Heading />
+        <div className="container mt-4">
+          <div className="row text-center justify-content-center">
+            {listhadith}
+          </div>
         </div>
-      </div>
+      </>
     );
   }
 }

@@ -25,7 +25,7 @@ body {
   transition-duration: var(--transition-duration);
 }
 
-a:hover {
+.card-hadith a:hover {
   color: var(--text-color-hover) !important;
 }
 
