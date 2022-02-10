@@ -6,6 +6,7 @@ import {
 } from "react-router-dom";
 import HadithDetail from "./HadithDetail";
 import HeadingDetail from "./HeadingDetail";
+import Navigator from "./Navigator";
 import "./HadithList.css";
 import axios from "axios";
 
@@ -38,11 +39,24 @@ export default function GetHadithDetail(props) {
     setHadithNumber(newNumber);
   };
 
+  const nextHadith = () => {
+    setHadithNumber(hadithNumber + 1);
+  };
+  const backHadith = () => {
+    setHadithNumber(hadithNumber - 1);
+  };
   if (detailHadith) {
     return (
       <>
-        <HeadingDetail searchHadith={search} nama={hadithName} />
-        <HadithDetail arab={detailHadith.arab} id={detailHadith.id} />
+        <div className="container p-3">
+          <HeadingDetail searchHadith={search} nama={hadithName} />
+          <Navigator
+            number={hadithNumber}
+            next={nextHadith}
+            back={backHadith}
+          />
+          <HadithDetail arab={detailHadith.arab} id={detailHadith.id} />
+        </div>
       </>
     );
   } else {
