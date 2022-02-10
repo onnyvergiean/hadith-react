@@ -62,12 +62,14 @@ export default function GetHadithDetail(props) {
   } else {
     return (
       <>
-        <HeadingDetail searchHadith={search} nama={hadithName} />
         <div className="container p-3">
-          <div className="row mt-3">
-            <div className="col-12">
-              <div className="border detail-hadith d-flex justify-content-center p-4">
-                <h1>Maaf data Hadith tersebut Kosong</h1>
+          <HeadingDetail searchHadith={search} nama={hadithName} />
+          <div className="container p-3">
+            <div className="row mt-3">
+              <div className="col-12">
+                <div className="border detail-hadith d-flex justify-content-center p-4">
+                  <h1>Maaf data Hadith tersebut Kosong</h1>
+                </div>
               </div>
             </div>
           </div>
