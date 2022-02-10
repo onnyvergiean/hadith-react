@@ -4,6 +4,9 @@ import AutoStoriesOutlinedIcon from "@mui/icons-material/AutoStoriesOutlined";
 import { Link } from "react-router-dom";
 
 class HadithList extends Component {
+  componentDidMount() {
+    document.title = "Hadith Apps";
+  }
   render() {
     return (
       <div className="col-12 col-md-3 my-2">
