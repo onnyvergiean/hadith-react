@@ -64,6 +64,11 @@ export default function GetHadithDetail(props) {
       <>
         <div className="container p-3">
           <HeadingDetail searchHadith={search} nama={hadithName} />
+          <Navigator
+            number={hadithNumber}
+            next={nextHadith}
+            back={backHadith}
+          />
           <div className="container p-3">
             <div className="row mt-3">
               <div className="col-12">
