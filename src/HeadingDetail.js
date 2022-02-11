@@ -5,9 +5,7 @@ export default function HeadingDetail(props) {
   const [hadithNumber, setHadithNumber] = useState("");
 
   const handleInput = (evt) => {
-    setHadithNumber(evt.target.value);
-    props.searchHadith(hadithNumber);
-    console.log(evt.target.value);
+    setHadithNumber(evt.target.valueAsNumber);
   };
   const submitHandler = (evt) => {
     evt.preventDefault();
@@ -24,17 +22,13 @@ export default function HeadingDetail(props) {
           <input
             value={hadithNumber}
             onChange={handleInput}
+            min="1"
+            max={props.available}
+            type="number"
             className="form-control"
             placeholder="Masukkan No Hadith"
             style={{ height: 48 }}
           />
-
-          <button
-            className="btn btn-dark btn-lg"
-            style={{ width: "100px", height: "100%" }}
-          >
-            Search
-          </button>
         </div>
       </form>
     </div>

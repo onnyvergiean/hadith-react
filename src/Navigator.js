@@ -22,7 +22,10 @@ export default function Navigator(props) {
       </div>
       <div className="col-12 col-md-2 align-self-center">
         <button
-          className="btn btn-outline-success"
+          className={
+            "btn btn-outline-success" +
+            (props.number == props.available ? " disabled" : "")
+          }
           id="nextHadith"
           onClick={props.next}
         >

@@ -15,6 +15,7 @@ export default function GetHadithDetail(props) {
   const [detailHadith, setDetailHadith] = useState([]);
   const [hadithName, setHadithName] = useState("");
   const [isLoading, setIsLoading] = useState(true);
+  const [hadithAvailable, setHadithAvailable] = useState();
   let { id } = useParams();
   const [hadithNumber, setHadithNumber] = useState(1);
   const [searchParams, setSearchParams] = useSearchParams();
@@ -27,10 +28,12 @@ export default function GetHadithDetail(props) {
         setSearchParams(createSearchParams({ no: hadithNumber }));
         setDetailHadith(res.data.data.contents);
         setHadithName(res.data.data.name);
+        setHadithAvailable(res.data.data.available);
         setIsLoading(false);
       };
 
       fetchData();
+      setIsLoading(true);
 
       document.title = `${hadithName} - Hadith no ${hadithNumber}`;
     } catch (error) {
@@ -44,11 +47,11 @@ export default function GetHadithDetail(props) {
   };
 
   const nextHadith = () => {
-    setHadithNumber(hadithNumber + 1);
+    setHadithNumber((prevState) => prevState + 1);
     setIsLoading(true);
   };
   const backHadith = () => {
-    setHadithNumber(hadithNumber - 1);
+    setHadithNumber((prevState) => prevState - 1);
     setIsLoading(true);
   };
 
@@ -58,9 +61,14 @@ export default function GetHadithDetail(props) {
     return (
       <>
         <div className="container p-3">
-          <HeadingDetail searchHadith={search} nama={hadithName} />
+          <HeadingDetail
+            searchHadith={search}
+            nama={hadithName}
+            available={hadithAvailable}
+          />
           <Navigator
             number={hadithNumber}
+            available={hadithAvailable}
             next={nextHadith}
             back={backHadith}
           />
@@ -72,9 +80,14 @@ export default function GetHadithDetail(props) {
     return (
       <>
         <div className="container p-3">
-          <HeadingDetail searchHadith={search} nama={hadithName} />
+          <HeadingDetail
+            searchHadith={search}
+            nama={hadithName}
+            available={hadithAvailable}
+          />
           <Navigator
             number={hadithNumber}
+            available={hadithAvailable}
             next={nextHadith}
             back={backHadith}
           />
