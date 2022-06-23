@@ -1,12 +1,12 @@
-import React from "react";
-import "./HadithList.css";
-export default function Navigator(props) {
+import React from 'react';
+import '../Assets/Hadith.css';
+export default function HadithDetailNav(props) {
   return (
     <div className="row mt-3 navigator">
       <div className="col-12 col-md-2 align-self-center">
         <button
           className={
-            "btn btn-outline-success" + (props.number === 1 ? " disabled" : "")
+            'btn btn-outline-success' + (props.number === 1 ? ' disabled' : '')
           }
           id="backHadith"
           onClick={props.back}
@@ -23,8 +23,8 @@ export default function Navigator(props) {
       <div className="col-12 col-md-2 align-self-center">
         <button
           className={
-            "btn btn-outline-success" +
-            (props.number == props.available ? " disabled" : "")
+            'btn btn-outline-success' +
+            (props.number === props.available ? ' disabled' : '')
           }
           id="nextHadith"
           onClick={props.next}

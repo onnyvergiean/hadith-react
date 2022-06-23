@@ -1,6 +1,6 @@
-import React from "react";
+import React from 'react';
 
-export default function HadithDetail(props) {
+export default function HadithDetailItem(props) {
   return (
     <div className="row mt-3">
       <div className="col-12">

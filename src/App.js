@@ -1,13 +1,14 @@
-import Hadith from "./GetListHadith";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
-import GetDetailHadith from "./GetDetailHadith";
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import HadithDetail from './Components/HadithDetail';
+import HadithList from './Components/HadithList';
 
 function App() {
   return (
     <BrowserRouter>
       <Routes>
-        <Route path="/" element={<Hadith />} />
-        <Route path="/:id/" element={<GetDetailHadith />} />
+        <Route path="/" element={<HadithList />} />
+        <Route path="/:id" element={<HadithDetail />} />
+        <Route path="*" element={<HadithList />} />
       </Routes>
     </BrowserRouter>
   );

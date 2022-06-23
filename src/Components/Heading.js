@@ -1,5 +1,5 @@
-import React, { Component } from "react";
-import logo from "./Assets/logo.png";
+import React, { Component } from 'react';
+import logo from '../Assets/logo.png';
 export default class Heading extends Component {
   render() {
     return (
